@@ -1,6 +1,3 @@
-provider "aws" {
-  region = "us-east-1" # Change to your preferred AWS region
-}
 
 resource "aws_ebs_volume" "my_volume" {
   availability_zone = "us-east-1a" # Change to match your EC2 instance AZ
@@ -11,4 +8,3 @@ resource "aws_ebs_volume" "my_volume" {
     Name = "MyEBSVolume"
   }
 }
-
