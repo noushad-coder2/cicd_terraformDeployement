@@ -33,4 +33,4 @@ jobs:
         run: terraform plan
 
       - name: Apply Terraform Changes
-        run: terraform apply -auto-approve tfplan
+        run: terraform apply 
