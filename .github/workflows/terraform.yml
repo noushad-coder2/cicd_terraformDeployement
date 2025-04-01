@@ -19,7 +19,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          aws-region: your-aws-region
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
@@ -29,8 +29,14 @@ jobs:
       - name: Initialize Terraform
         run: terraform init
 
+      - name: Validate Terraform
+        run: terraform validate
+
       - name: Plan Terraform Changes
-        run: terraform plan
+        run: terraform plan -out=tfplan
+
+      - name: Save Terraform Plan File
+        run: mv tfplan /tmp/tfplan
 
       - name: Apply Terraform Changes
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve /tmp/tfplan
