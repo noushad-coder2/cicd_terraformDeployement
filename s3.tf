@@ -1,7 +1,7 @@
 
 # Create an S3 bucket
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "my-unique-bucket-name_noushad"  # Replace with a globally unique name
+  bucket = "myuniquebucketnamenoushad"  # Replace with a globally unique name
 
   # Optional: Add tags
   tags = {
