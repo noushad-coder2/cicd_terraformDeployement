@@ -39,4 +39,4 @@ jobs:
         run: mv tfplan /tmp/tfplan
 
       - name: Apply Terraform Changes
-        run: terraform apply -refresh-only -auto-approve
+        run: terraform apply -auto-approve
